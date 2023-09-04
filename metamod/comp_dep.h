@@ -74,9 +74,11 @@
 	#endif //defined WIN32
 #endif
 
-#if defined (_WIN32) && defined (_MSC_VER)
+#if defined (_WIN32) && defined (_MSC_VER) && _MSC_VER < 1937
 	// On x86 va_list is just a pointer.
 	#define va_copy(dst,src) ((dst)=(src))
+#elif defined (_MSC_VER) && _MSC_VER >= 1937
+	// nothing
 #else
 	// Some systems that do not supply va_copy have __va_copy instead, since 
 	// that was the name used in the draft proposal.

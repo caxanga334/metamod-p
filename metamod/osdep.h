@@ -79,10 +79,12 @@
 // Attributes to specify an "exported" function, visible from outside the
 // DLL.
 #undef DLLEXPORT
-#ifdef _WIN32
+#if defined _WIN32 && !defined (_MSC_VER)
 	#define DLLEXPORT	__declspec(dllexport) __attribute__ ((externally_visible))
 	// WINAPI should be provided in the windows compiler headers.
 	// It's usually defined to something like "__stdcall".
+#elif defined _WIN32 && defined (_MSC_VER) && _MSC_VER >= 1937
+	#define DLLEXPORT	__declspec(dllexport)
 #elif defined(linux)
 	#define DLLEXPORT	__attribute__ ((visibility ("default"), externally_visible))
 	#define WINAPI		/* */

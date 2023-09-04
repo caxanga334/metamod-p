@@ -68,7 +68,8 @@ void _fini(void) {
 #endif
 
 // Fixed MSVC compiling, by Nikolay "The Storm" Baklicharov.
-#if defined(_WIN32) && !defined(__GNUC__) && defined (_MSC_VER)
+// AMBuild: This is passed to the linker via AMBuild
+#if defined(_WIN32) && !defined(__GNUC__) && defined (_MSC_VER) && !defined AMBUILD
 	#pragma comment(linker, "/EXPORT:GiveFnptrsToDll=_GiveFnptrsToDll@8,@1")
 	#pragma comment(linker, "/SECTION:.data,RW")
 #endif

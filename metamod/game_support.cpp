@@ -44,6 +44,20 @@
 #include "game_autodetect.h"	// autodetect_gamedll
 #include "support_meta.h"	// MIN
 
+#if (defined _MSC_VER && _MSC_VER >= 1937) || defined (__clang_major__) && __clang_major__ >= 9
+#include <string> // for string literals
+
+const char* operator""__MODARCH__(const char* sz, std::size_t size)
+{
+#if defined(__x86_64__) || defined(__amd64__)
+	return "_amd64";
+#else
+	return "_i386";
+#endif
+}
+
+#endif
+
 // Adapted from adminmod h_export.cpp:
 //! this structure contains a list of supported mods and their dlls names
 //! To add support for another mod add an entry here, and add all the 

@@ -44,7 +44,7 @@
 #include "game_autodetect.h"	// autodetect_gamedll
 #include "support_meta.h"	// MIN
 
-#if (defined _MSC_VER && _MSC_VER >= 1937) || defined (__clang_major__) && __clang_major__ >= 9
+#if (defined _MSC_VER && _MSC_VER >= 1900) || defined (__clang_major__) && __clang_major__ >= 9
 #include <string> // for string literals
 
 const char* operator""__MODARCH__(const char* sz, std::size_t size)

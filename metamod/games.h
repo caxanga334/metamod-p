@@ -39,7 +39,7 @@
 
 // __MODARCH__ is defined as a UDL in game_support.cpp
 
-#if defined _MSC_VER && _MSC_VER < 1937
+#if defined _MSC_VER && _MSC_VER < 1900
 
 #if defined(__x86_64__) || defined(__amd64__)
 #  define __MODARCH__ "_amd64"

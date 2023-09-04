@@ -83,7 +83,7 @@
 	#define DLLEXPORT	__declspec(dllexport) __attribute__ ((externally_visible))
 	// WINAPI should be provided in the windows compiler headers.
 	// It's usually defined to something like "__stdcall".
-#elif defined _WIN32 && defined (_MSC_VER) && _MSC_VER >= 1937
+#elif defined _WIN32 && defined (_MSC_VER) && _MSC_VER >= 1900
 	#define DLLEXPORT	__declspec(dllexport)
 #elif defined(linux)
 	#define DLLEXPORT	__attribute__ ((visibility ("default"), externally_visible))

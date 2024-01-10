@@ -97,7 +97,7 @@
 	{"MorbidPR",          "morbid"__MODARCH__".so",       "morbid.dll",        "Morbid Inclination"},
 	{"movein",            "hl"__MODARCH__".so",           "hl.dll",            "Move In!"},
 	{"msc",               "none",                     "ms.dll",            "Master Sword Continued" },
-	{"ns",                "ns"__MODARCH__".so",           "ns.dll",            "Natural Selection"},
+	{"ns",                "ns.so",           "ns.dll",            "Natural Selection"},
 	{"nsp",               "ns"__MODARCH__".so",           "ns.dll",            "Natural Selection Beta"},
 	{"oel",               "hl"__MODARCH__".so",           "hl.dll",            "OeL Half-Life"},
 	{"og",                "og"__MODARCH__".so",           "og.dll",            "Over Ground"},
